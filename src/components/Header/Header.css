@@ -1,0 +1,26 @@
+
+
+.header{
+    height: 80px;
+    background-color: #1C2B35;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 90px;
+}
+
+/* .logo{
+    
+} */
+
+.nav-bar ul{ 
+    display: flex;
+}
+.nav-bar ul li {
+    list-style: none;
+}
+.nav-bar ul li a{
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+}
