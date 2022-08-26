@@ -19,26 +19,16 @@
 
     
 }
-.cart-container h1{
-    text-align: center;
-}
-.cart-container p{
-    margin: 20px;
-}
-.cart-container button{
-    width: 90%;
-    margin:5px 10px;
-    padding: 10px 20px;
-    border: none;  
-    color: white; 
-    /* font-weight: bold; */
-    font-size: 17px;
-}
-.cart-container #clear-cart{
-    background-color:#FF3030;
-   
-}
-.cart-container #order-review{
-    background-color: #FF9900;
+@media only screen and (max-width: 600px) {
 
+    .products-container{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        margin: 5px;
+    }
+    .shop-container{
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        
+    }
 }

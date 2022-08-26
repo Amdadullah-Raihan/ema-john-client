@@ -24,3 +24,9 @@
     color: white;
     padding: 10px 20px;
 }
+@media only screen and (max-width: 600px) {
+    .nav-bar ul{
+        display: none;
+    }
+    
+}
