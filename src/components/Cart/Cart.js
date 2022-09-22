@@ -1,11 +1,13 @@
 import React from 'react';
 import './Cart.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faArrowRight, faShoppingCart, faTrash } from '@fortawesome/free-solid-svg-icons'
+import {faArrowRight, faTrash } from '@fortawesome/free-solid-svg-icons'
+import { clearCart } from '../../utilities/manageDB';
 
 const Cart = ({cart}) => {
 
-console.log(cart)
+    // console.log(cart)
+
     let total = 0;
     let shipingCost = 0;
     let tax = 0;
@@ -18,6 +20,10 @@ console.log(cart)
         grandTotal = total + shipingCost + tax;
     }
     
+    const handleClearCart = () =>{
+        clearCart();
+        console.log("clicked")
+    }
 
     return (
         <div className='cart'>
@@ -27,7 +33,7 @@ console.log(cart)
                 <p>Total Shipping Cost: ${shipingCost}</p>
                 <p>Tax: ${tax}</p>
                 <p><big>Grand Total: ${grandTotal}</big></p>
-                <button id='clear-cart'>Clear Cart  <FontAwesomeIcon icon={faTrash}> </FontAwesomeIcon></button>
+                <button id='clear-cart' onClick={()=>handleClearCart()}>Clear Cart  <FontAwesomeIcon icon={faTrash}> </FontAwesomeIcon></button>
                 <button id = 'order-review'>Review Order  <FontAwesomeIcon icon={faArrowRight}> </FontAwesomeIcon> </button>
         </div>
     );

@@ -27,8 +27,14 @@
         margin: 5px;
     }
     .shop-container{
-        display: grid;
-        grid-template-columns: 3fr 2fr;
+        display:flex;
+        flex-direction: column-reverse;
         
+    }
+    .cart-container{
+        position: sticky;
+        top: 0px;
+        z-index: 2;
+        background:#FFDFB3;
     }
 }

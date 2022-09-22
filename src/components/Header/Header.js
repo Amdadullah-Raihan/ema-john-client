@@ -1,6 +1,9 @@
 import React from 'react';
 import logo from '../../images/Logo.svg'
 import './Header.css'
+import ReactDOM from 'react-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {  faBars} from '@fortawesome/free-solid-svg-icons'
 
 const Header = () => {
     return (
@@ -9,6 +12,7 @@ const Header = () => {
                 <div className="logo">
                     <img src={logo} alt="" srcSet="" />
                 </div>
+                
                 <nav className='nav-bar'>
                     <ul>
                         <li><a href="/Shop">Shop</a></li>
@@ -18,6 +22,7 @@ const Header = () => {
                     </ul>
 
                 </nav>
+                <FontAwesomeIcon icon={faBars} className="bars"></FontAwesomeIcon>
             </div>
             <div className="intro">
                 <div className="sell-off">

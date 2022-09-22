@@ -42,3 +42,11 @@
 #product-price{
     margin-bottom: 42px;
 }
+@media (max-width: 600px) {
+    
+    .product img{
+        width: 96%;
+        height: auto;
+    }
+    
+}
