@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {  faBars} from '@fortawesome/free-solid-svg-icons'
 import { handleSearch } from '../Shop/Shop';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     
@@ -18,10 +19,10 @@ const Header = () => {
                 
                 <nav className='nav-bar'>
                     <ul>
-                        <li><a href="/Shop">Shop</a></li>
-                        <li><a href="/Order">Order Track</a></li>
-                        <li><a href="/Inventory">Manage Inventory</a></li>
-                        <li><a href="/Login">Login</a></li>
+                        <li ><Link to="/shop">Shop</Link></li>
+                        <li ><Link to="/orders">Order Track</Link></li>
+                        <li ><Link to="/inventory">Manage Inventory</Link></li>
+                        <li ><Link to="/login">Login</Link></li>
                     </ul>
 
                 </nav>
