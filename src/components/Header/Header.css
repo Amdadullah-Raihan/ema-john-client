@@ -9,9 +9,10 @@
     padding: 0 90px;
 }
 
-/* .logo{
-    
-} */
+.logo{
+    display: flex;
+    justify-content: space-between;
+}
 
 .nav-bar ul{ 
     display: flex;

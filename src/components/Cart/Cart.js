@@ -13,15 +13,19 @@ const Cart = ({cart}) => {
     let tax = 0;
     let grandTotal = 0;
     let totalQuantity = 0;
+
     for( const product of cart){
+       
         if(!product.quantity){
-            product.quantity =1; 
+            product.quantity = 1; 
         }
+        totalQuantity = totalQuantity + product.quantity;
+        console.log(totalQuantity)
         total = total + product.price * product.quantity;
         shipingCost = shipingCost + product.shipping;
         tax = parseFloat((total*0.1).toFixed(2));
         grandTotal = total + shipingCost + tax;
-        totalQuantity = totalQuantity + product.quantity;
+        
     }
     
     const handleClearCart = () =>{

@@ -10,6 +10,7 @@ const Shop = () => {
    
     const [products, setProducts] = useState([]);
     const [cart, setCart] = useState([]);
+    const [displayProducts, setDisplayProducts] = useState([])
     
     const handleAddToCart = (product) => {
         // console.log(product);
@@ -21,8 +22,12 @@ const Shop = () => {
     useEffect( () => {
         fetch('products.json')
         .then(res => res.json())
-        .then(data => setProducts(data))
-    },[])
+        .then(data => 
+            {setProducts(data);
+            setDisplayProducts(data);
+            
+        })
+    },[products])
 
     useEffect(()=> {
        
@@ -31,20 +36,35 @@ const Shop = () => {
             const savedCart = [];
             for(const id in storedCart){
             const addedProducts = products.find(product => product.id === id) 
-            savedCart.push(addedProducts);
+          
             if(addedProducts){
-                const quantity = savedCart[id];
-                savedCart.quantity = quantity;
+                const quantity = storedCart[id];
+                addedProducts.quantity = quantity;
+                
                 savedCart.push(addedProducts)
+                console.log(savedCart)
             }
             }
             setCart(savedCart);
         }
     } ,[products])
 
+    const handleSearch = (event) => {
+        const searchText = event.target.value;
+        const matchedProducts = products.filter(product => product.name.toLowerCase().includes(searchText.toLowerCase()))
+        setDisplayProducts(matchedProducts)
+        console.log(matchedProducts.length);
+    }
+
     return (
+        <div>
+            <div>
+        <input type="text" name="" onChange = {handleSearch} id="input-field" placeholder='Search ' />
+        </div>
         <div className="shop-container">
+           
             <div className="products-container">
+                
                 {
                     products.map(product => <Product
                          key={product.id}
@@ -57,6 +77,7 @@ const Shop = () => {
                 <Cart cart={cart}></Cart>
             </div>
             
+        </div>
         </div>
     );
 };

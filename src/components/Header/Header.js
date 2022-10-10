@@ -4,13 +4,16 @@ import './Header.css'
 import ReactDOM from 'react-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {  faBars} from '@fortawesome/free-solid-svg-icons'
+import { handleSearch } from '../Shop/Shop';
 
 const Header = () => {
+    
     return (
         <div>
             <div  className='header'>
                 <div className="logo">
                     <img src={logo} alt="" srcSet="" />
+                    
                 </div>
                 
                 <nav className='nav-bar'>

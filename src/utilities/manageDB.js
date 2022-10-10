@@ -28,6 +28,7 @@ const getStoredItems = ()=> {
   const storedItems = localStorage.getItem("shopping_cart");
   const storedItemsO = JSON.parse(storedItems)
   return storedItemsO;
+  console.log(storedItemsO)
    
 }
 export{

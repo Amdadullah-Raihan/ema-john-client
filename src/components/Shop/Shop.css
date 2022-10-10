@@ -1,3 +1,10 @@
+#input-field{
+  border: 1px solid #FFDFB3;
+  padding: 10px 20px ;
+  width: 70%;
+  margin: 20px;
+}
+
 .shop-container{
     display: grid;
     grid-template-columns: 4fr 1fr;
