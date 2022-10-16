@@ -5,10 +5,14 @@ import ReactDOM from 'react-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {  faBars} from '@fortawesome/free-solid-svg-icons'
 import { handleSearch } from '../Shop/Shop';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Header = () => {
-    
+    let activeStyle = {
+        // textDecoration: "underline",
+        fontWeight : "bold",
+        color:"goldenrod"
+      };
     return (
         <div>
             <div  className='header'>
@@ -19,10 +23,29 @@ const Header = () => {
                 
                 <nav className='nav-bar'>
                     <ul>
-                        <li ><Link to="/shop">Shop</Link></li>
-                        <li ><Link to="/orders">Track Order</Link></li>
-                        <li ><Link to="/inventory">Manage Inventory</Link></li>
-                        <li ><Link to="/login">Login</Link></li>
+                        <li >
+                            <NavLink style={({ isActive }) =>
+                             isActive ? activeStyle : undefined
+                             } to="/shop">Shop
+                            </NavLink>
+                    </li>
+                    <li >
+                        <NavLink style={({ isActive }) =>
+                            isActive ? activeStyle : undefined
+                            } to="/orders">Track Order
+                        </NavLink></li>
+                        <li >
+                            <NavLink style={({ isActive }) =>
+                                isActive ? activeStyle : undefined
+                                } to="/inventory">Manage Inventory
+                            </NavLink>
+                        </li>
+                        <li >
+                            <NavLink style={({ isActive }) =>
+                                isActive ? activeStyle : undefined
+                                } to="/login">Login
+                            </NavLink>
+                        </li>
                     </ul>
 
                 </nav>

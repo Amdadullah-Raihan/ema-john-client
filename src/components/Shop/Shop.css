@@ -15,7 +15,7 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 45px;
     
-    margin: 120px 10px auto 82px;
+    margin: 50px 10px auto 50px;
 }
 
 .cart-container{

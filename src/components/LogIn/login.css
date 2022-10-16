@@ -7,7 +7,7 @@
     margin: 0 auto;
     margin-top: 20px;
     padding: 20px;
-    height: 400px;
+    height: auto    ;
     width: 300px;
     border: none;
     background-color: #FFE0B2;
@@ -19,4 +19,21 @@
     box-sizing: border-box;
     padding: 13px 20px;
     font-size: 15px;
+}
+.login-credentials button{
+    background-color: goldenrod;
+    font-weight: bold;
+    font-size: 18px;
+}
+#forgot-pass{
+    margin-top: 40px 0px;
+    color: #FF9900;
+}
+hr{
+    margin: 40px 0px;
+    /* background-color: #FF9900; */
+}
+#new-ac{
+    background-color:#FF9900;
+
 }

@@ -3,6 +3,9 @@ import Product from '../Product/Product';
 import './Shop.css'
 import Cart from '../Cart/Cart';
 import { addToDB, getStoredItems } from '../../utilities/manageDB';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -10,11 +13,22 @@ const Shop = () => {
    
     const [products, setProducts] = useState([]);
     const [cart, setCart] = useState([]);
-    const [displayProducts, setDisplayProducts] = useState([])
+    // const [displayProducts, setDisplayProducts] = useState([])
     
     const handleAddToCart = (product) => {
         // console.log(product);
-        const newCart = [...cart, product]
+        let newCart = []
+
+        const exist = cart.find(pd=> pd.id=== product.id);
+        if(exist){
+            exist.quantity = exist.quantity+1;
+            const rest = cart.filter(pd=> pd.id !== product.id);
+            newCart = [...rest, product]
+        }
+        else{
+            product.quantity = 1;
+            newCart = [...cart, product]
+        }
         setCart(newCart);
         addToDB(product.id)
     }
@@ -24,7 +38,7 @@ const Shop = () => {
         .then(res => res.json())
         .then(data => 
             {setProducts(data);
-            setDisplayProducts(data);
+            // setDisplayProducts(data);
             
         })
     },[products])
@@ -49,18 +63,18 @@ const Shop = () => {
         }
     } ,[products])
 
-    const handleSearch = (event) => {
-        const searchText = event.target.value;
-        const matchedProducts = products.filter(product => product.name.toLowerCase().includes(searchText.toLowerCase()))
-        setDisplayProducts(matchedProducts)
-        console.log(matchedProducts.length);
-    }
+    // const handleSearch = (event) => {
+    //     const searchText = event.target.value;
+    //     const matchedProducts = products.filter(product => product.name.toLowerCase().includes(searchText.toLowerCase()))
+    //     setDisplayProducts(matchedProducts)
+    //     setProducts(displayProducts)
+    // }
 
     return (
         <div>
-            <div>
-        <input type="text" name="" onChange = {handleSearch} id="input-field" placeholder='Search ' />
-        </div>
+            {/* <div>
+                <input type="text" name="" onChange = {handleSearch} id="input-field" placeholder='Search ' />
+            </div> */}
         <div className="shop-container">
            
             <div className="products-container">
@@ -74,7 +88,11 @@ const Shop = () => {
                 }
             </div>
             <div className="cart-container">
-                <Cart cart={cart}></Cart>
+                <Cart cart={cart}>
+                <Link to='/orders'>
+                            <button  id = 'order-review'>Review Order  <FontAwesomeIcon icon={faArrowRight}> </FontAwesomeIcon> </button>
+                        </Link> 
+                </Cart>
             </div>
             
         </div>
