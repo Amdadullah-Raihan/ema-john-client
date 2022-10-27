@@ -1,7 +1,7 @@
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import useCart from '../../hooks/useCart';
 import useProducts from '../../hooks/useProducts';
 import { clearCart, removeFromDb } from '../../utilities/manageDB';

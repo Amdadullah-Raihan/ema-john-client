@@ -91,7 +91,7 @@ const Shop = () => {
                 <Cart cart={cart}>
                 <Link to='/orders'>
                             <button  id = 'order-review'>Review Order  <FontAwesomeIcon icon={faArrowRight}> </FontAwesomeIcon> </button>
-                        </Link> 
+                </Link> 
                 </Cart>
             </div>
             

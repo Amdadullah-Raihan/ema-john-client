@@ -1,14 +1,13 @@
 import React from 'react';
 import './Cart.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faArrowRight, faTrash } from '@fortawesome/free-solid-svg-icons'
+import {faTrash } from '@fortawesome/free-solid-svg-icons'
 import { clearCart } from '../../utilities/manageDB';
-import { Link } from 'react-router-dom';
-import useCart from '../../hooks/useCart';
+
 
 const Cart = (props) => {
     const {cart} = props;
-    console.log(props)
+    // console.log(props)
     
 
     let total = 0;

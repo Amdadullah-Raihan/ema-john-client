@@ -8,7 +8,7 @@
     margin-top: 20px;
     padding: 20px;
     height: auto    ;
-    width: 300px;
+    width: 33vw;
     border: none;
     background-color: #FFE0B2;
 }
@@ -36,4 +36,23 @@ hr{
 #new-ac{
     background-color:#FF9900;
 
+}
+.sign-in-btn-container{
+    width: 33vw;
+    margin: 0 auto;
+    padding: 30px 30px;
+}
+.sign-in-btn-container button{
+    border: 1px solid #FF9900;
+    background-color: white;
+    border-radius: 25px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#google-logo{
+    width: 9%;
+    position: absolute;
+    left: 5px;
 }

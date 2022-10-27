@@ -1,9 +1,7 @@
 import React from 'react';
-import Cart from '../Cart/Cart';
 import './CartItem.css'
 import {faTrash } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import useCart from '../../hooks/useCart';
 
 
 const CartItem = (props) => {

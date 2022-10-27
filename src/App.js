@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+import Cart from './components/Cart/Cart';
 import Header from './components/Header/Header';
 import Inventory from './components/Inventory/Inventory';
 import LogIn from './components/LogIn/LogIn';
@@ -23,6 +24,7 @@ function App() {
           <Route path='/inventory' element={<Inventory></Inventory>}></Route>
           <Route path='/login' element={<LogIn></LogIn>}></Route>
           <Route path='/place-order' element={<PlaceOrder></PlaceOrder>}></Route>
+          <Route path='/cart' element={<Cart></Cart>}></Route>
           <Route path='*' element={<NotFound></NotFound>}></Route>
         </Routes>
       </BrowserRouter>
