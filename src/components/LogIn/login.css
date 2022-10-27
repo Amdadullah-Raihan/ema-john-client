@@ -1,4 +1,4 @@
-.login{
+.login-container{
     text-align: center;
     margin-top: 50px;
 
@@ -55,4 +55,19 @@ hr{
     width: 9%;
     position: absolute;
     left: 5px;
+}
+@media only screen and (max-width:600px) {
+    .login-container{
+        margin-top: 0;
+    }
+    .login-credentials{
+        width: 100%;
+    }
+    .sign-in-btn-container{
+        width: 100%;
+        margin-bottom: 100px;
+    }
+    #google-logo{
+        width: 12%;
+    }
 }

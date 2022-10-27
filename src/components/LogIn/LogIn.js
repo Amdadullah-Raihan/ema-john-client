@@ -4,9 +4,10 @@ import './login.css'
 const LogIn = () => {
     const {signInUsingGoogle} = useFirebase();
     return (
-        <div className='login'>
-            <h1>Provide your login credentials</h1>
+        <div className='login-container'>
+            
             <div className='login-credentials'> 
+                <h1>Provide your login credentials</h1>
                
                 <input type="text" name="" id="email" placeholder='Enter your email' /> <br />
                 

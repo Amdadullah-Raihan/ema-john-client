@@ -28,16 +28,16 @@ const OrderReview = () => {
     }
 
     return (
-        <div className='order-review'>
+        <div className='order-review-container'>
             <div id="items-container">
                 <h1>Track your orders </h1>
                 <h3>You ordered {cart.length} individual items</h3>
-                <h4 id='product-heading'>
+                <h6 id='product-heading'>
                     <p>Product</p>
                     <p>Quantity</p>
                     <p>Price</p>
                     <p>Total Price</p>
-                </h4>
+                </h6>
                 <div>
                 {
                     cart.map(cartItem=> <CartItem item={cartItem} handleRemoveItem={handleRemoveItem} ></CartItem>)

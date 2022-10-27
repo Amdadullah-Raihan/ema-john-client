@@ -20,7 +20,7 @@ const CartItem = (props) => {
                 <p>{price}</p>
                 <p id='price'>
                     {price*quantity}
-                    <button onClick={()=> handleRemoveItem(id)} id='remove-item'><small>Remove Item</small> <small> <FontAwesomeIcon icon={faTrash}> </FontAwesomeIcon>  </small></button>
+                    <button onClick={()=> handleRemoveItem(id)} id='remove-item-btn'><small id='remove-item-btn-text'>Remove Item</small> <small> <FontAwesomeIcon icon={faTrash}> </FontAwesomeIcon>  </small></button>
 
                 </p>
               

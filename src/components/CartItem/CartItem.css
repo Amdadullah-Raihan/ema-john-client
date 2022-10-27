@@ -27,7 +27,7 @@
     display: flex;
     align-items: center;
 }
-#remove-item{
+#remove-item-btn{
     /* width: 70%; */
     background-color:#FF3030;
     color: white;
@@ -52,4 +52,13 @@
 }
 small{
     padding: 3px;
+}
+@media only screen and (max-width:600px) {
+    .single-item #img{
+        display: none;
+    }
+
+    #remove-item-btn-text{
+        display: none;
+    }
 }
