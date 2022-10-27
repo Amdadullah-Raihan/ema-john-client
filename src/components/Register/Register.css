@@ -1,0 +1,12 @@
+.register-container{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   
+}
+.register-form-container{
+    width: 33vw;
+}
+.form{
+    width: 33vw;
+}

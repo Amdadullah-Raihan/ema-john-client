@@ -1,46 +1,45 @@
 .login-container{
     text-align: center;
     margin-top: 50px;
-
+    width: 100vw;
+   
+    
 }
 .login-credentials{
     margin: 0 auto;
     margin-top: 20px;
+    margin-bottom: 100px;
     padding: 20px;
-    height: auto    ;
+    height:auto;
     width: 33vw;
     border: none;
-    background-color: #FFE0B2;
+    background-color:white;
+    position: relative;
+    border: 1px solid #FF9900;
 }
 .login-credentials #email, #password, button{
     width: 100%;
-    border: none;
-    margin: 10px 0;
+    border: 1px solid #FF9900;
+    margin: 30px 0;
     box-sizing: border-box;
     padding: 13px 20px;
     font-size: 15px;
 }
 .login-credentials button{
-    background-color: goldenrod;
+    background-color:  rgba(255, 153, 0, 0.3);;
     font-weight: bold;
     font-size: 18px;
+    border: none;
 }
-#forgot-pass{
-    margin-top: 40px 0px;
-    color: #FF9900;
-}
-hr{
-    margin: 40px 0px;
-    /* background-color: #FF9900; */
-}
-#new-ac{
-    background-color:#FF9900;
+.lebel{
+    position: absolute;
+    left: 20px;
 
+    
 }
 .sign-in-btn-container{
-    width: 33vw;
-    margin: 0 auto;
-    padding: 30px 30px;
+    padding: 0 20px;
+   
 }
 .sign-in-btn-container button{
     border: 1px solid #FF9900;
@@ -62,6 +61,8 @@ hr{
     }
     .login-credentials{
         width: 100%;
+        margin-top: 0;
+        border: none;
     }
     .sign-in-btn-container{
         width: 100%;

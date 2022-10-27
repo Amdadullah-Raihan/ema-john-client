@@ -8,6 +8,7 @@ import LogIn from './components/LogIn/LogIn';
 import NotFound from './components/NotFound/NotFound';
 import OrderReview from './components/OrderReview/OrderReview';
 import PlaceOrder from './components/PlaceOrder/PlaceOrder';
+import Register from './components/Register/Register';
 import Shop from './components/Shop/Shop';
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
           <Route path='/login' element={<LogIn></LogIn>}></Route>
           <Route path='/place-order' element={<PlaceOrder></PlaceOrder>}></Route>
           <Route path='/cart' element={<Cart></Cart>}></Route>
+          <Route path='/register' element={<Register></Register>}></Route>
           <Route path='*' element={<NotFound></NotFound>}></Route>
         </Routes>
       </BrowserRouter>
