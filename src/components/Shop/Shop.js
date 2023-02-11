@@ -13,7 +13,10 @@ const Shop = () => {
    
     const [products, setProducts] = useState([]);
     const [cart, setCart] = useState([]);
+    const [pageCount, setPageCount] = useState(0)
+    const [page, setPage] = useState(0)
     // const [displayProducts, setDisplayProducts] = useState([])
+    let size = 9;
     
     const handleAddToCart = (product) => {
         // console.log(product);
@@ -34,14 +37,16 @@ const Shop = () => {
     }
 
     useEffect( () => {
-        fetch('products.json')
+        fetch(`http://localhost:5000/products?page=${page}&&size=${size}`)
         .then(res => res.json())
         .then(data => 
-            {setProducts(data);
+            {setProducts(data.products);
             // setDisplayProducts(data);
+            const count = Math.ceil(data.count/size);
+            setPageCount(count);
             
         })
-    },[products])
+    },[page])
 
     useEffect(()=> {
        
@@ -77,15 +82,28 @@ const Shop = () => {
             </div> */}
         <div className="shop-container">
            
-            <div className="products-container">
-                
-                {
-                    products.map(product => <Product
-                         key={product.id}
-                         product = {product}
-                         handleAddToCart = {handleAddToCart}
-                    ></Product>)
-                }
+            <div>
+                    <div className="products-container">
+
+                        {
+                            products.map(product => <Product
+                                key={product.id}
+                                product={product}
+                                handleAddToCart={handleAddToCart}
+                            ></Product>)
+                        }
+                    </div>
+                    <div className="pagination">
+                        {
+                            [...Array(pageCount).keys()].map(number=>
+                            <button
+                             key={number}
+                             className={number===page?"selected":" "}
+                             onClick={()=>setPage(number)}
+                            >{number+1}
+                            </button>)
+                        }
+                    </div>
             </div>
             <div className="cart-container">
                 <Cart cart={cart}>
