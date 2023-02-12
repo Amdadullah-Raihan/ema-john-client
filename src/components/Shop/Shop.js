@@ -6,13 +6,14 @@ import { addToDB, getStoredItems } from '../../utilities/manageDB';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import useCart from '../../hooks/useCart';
 
 
 
 const Shop = () => {
    
     const [products, setProducts] = useState([]);
-    const [cart, setCart] = useState([]);
+    const [cart, setCart] = useCart();
     const [pageCount, setPageCount] = useState(0)
     const [page, setPage] = useState(0)
     // const [displayProducts, setDisplayProducts] = useState([])
@@ -48,25 +49,6 @@ const Shop = () => {
         })
     },[page])
 
-    useEffect(()=> {
-       
-        if(products.length){
-            const storedCart = getStoredItems()
-            const savedCart = [];
-            for(const id in storedCart){
-            const addedProducts = products.find(product => product.id === id) 
-          
-            if(addedProducts){
-                const quantity = storedCart[id];
-                addedProducts.quantity = quantity;
-                
-                savedCart.push(addedProducts)
-                console.log(savedCart)
-            }
-            }
-            setCart(savedCart);
-        }
-    } ,[products])
 
     // const handleSearch = (event) => {
     //     const searchText = event.target.value;

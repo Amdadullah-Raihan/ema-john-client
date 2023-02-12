@@ -7,7 +7,7 @@ import useFirebase from '../../hooks/useFirebase';
 const Header = () => {
     const {user,logOut} = useFirebase();
 
-    console.log('from header', user);
+    // console.log('from header', user);
 
 
     let activeStyle = {

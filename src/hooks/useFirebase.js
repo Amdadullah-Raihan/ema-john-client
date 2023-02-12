@@ -16,7 +16,7 @@ const useFirebase = () => {
             .then(result =>{
                 const user = result.user;
                 setUser(user)
-                console.log(result.user);
+                // console.log(result.user);
             })
     }
     const logOut = () => {

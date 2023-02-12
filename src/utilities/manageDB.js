@@ -25,7 +25,7 @@ const clearCart = () => {
 }
 const removeFromDb = id =>{
   let storedCart = localStorage.getItem("shopping_cart");
-  console.log(storedCart);
+  // console.log(storedCart);
   if(storedCart){
      storedCart = JSON.parse(storedCart);
       if(id in storedCart){

@@ -10,12 +10,12 @@ import CartItem from '../CartItem/CartItem';
 import './OrderReview.css'
 
 const OrderReview = () => {
-    const [products] = useProducts();
-    const [cart, setCart] = useCart(products);
+   
+    const [cart, setCart] = useCart();
     const navigate = useNavigate();
     
     const handleRemoveItem = (id) => {
-        console.log(id)
+        // console.log(id)
         const newCart = cart.filter(product => product.id!==id)
         removeFromDb(id);
         setCart(newCart)
@@ -48,7 +48,7 @@ const OrderReview = () => {
                 <div>
 
                     <Cart cart= {cart}>
-                       
+                      {console.log(cart)}
                             <button onClick={handlePlaceOrder}  id = 'order-review'>Place Order  <FontAwesomeIcon icon={faArrowRight}> </FontAwesomeIcon> </button>
                        
                     </Cart>
